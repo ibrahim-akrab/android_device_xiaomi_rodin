@@ -249,6 +249,10 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     WifiOverlay
 
+# Parts
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 # Power
 $(call soong_config_set,power_libperfmgr,mode_extension_lib, //$(DEVICE_PATH):libperfmgr-ext-xiaomi)
 
