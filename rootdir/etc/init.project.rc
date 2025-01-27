@@ -306,6 +306,10 @@ on boot
     chown system system /proc/mi_log/delay
     # END Performance_LogEnhance
 
+    # Touch
+    chown system system /sys/devices/platform/goodix_ts.0/switch_report_rate
+    chmod 0664 /sys/devices/platform/goodix_ts.0/switch_report_rate
+
 service vendor_tcpdump /vendor/bin/tcpdump-vendor -i any -W 3 -C 5 -s 134 -w /data/vendor/wlan_logs/tcpdump.pcap -Z system
        class main
        user root
