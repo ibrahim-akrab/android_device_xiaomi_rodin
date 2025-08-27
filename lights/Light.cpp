@@ -80,8 +80,8 @@ static uint32_t getBrightness(const HwLightState& state) {
 }
 
 static inline uint32_t scaleBrightness(uint32_t brightness, uint32_t maxBrightness) {
-    if (brightness == 0) {
-        return 0;
+    if (brightness < 15) {
+        return 15;
     }
 
     return (brightness - 1) * (4095 - 10) / (0xFF - 1) + 10;
