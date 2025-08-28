@@ -84,15 +84,15 @@ static inline uint32_t scaleBrightness(uint32_t brightness, uint32_t maxBrightne
         return 15;
     }
 
-    return (brightness - 1) * (4095 - 10) / (0xFF - 1) + 10;
+    return (brightness - 1) * (8297 - 15) / (0xFF - 1) + 15;
 }
 
 static inline uint32_t getScaledBrightness(const HwLightState& state, uint32_t maxBrightness) {
-    return scaleBrightness(getBrightness(state), 4095);
+    return scaleBrightness(getBrightness(state), 8297);
 }
 
 static void handleBacklight(const HwLightState& state) {
-    uint32_t brightness = getScaledBrightness(state, 4095);
+    uint32_t brightness = getScaledBrightness(state, 8297);
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
