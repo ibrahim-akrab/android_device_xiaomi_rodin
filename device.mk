@@ -91,14 +91,8 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Audio
 TARGET_EXCLUDES_AUDIOFX := true
-PRODUCT_PACKAGES += \
-    android.hardware.audio.service \
-    android.hardware.audio@7.1-impl \
-    android.hardware.audio.effect@7.0-impl \
-    android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default
 
 PRODUCT_PACKAGES += \
@@ -106,6 +100,28 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio_policy.stub \
     audio.usb.default
+
+PRODUCT_PACKAGES += \
+    libaecsw \
+    libagc1sw \
+    libagc2sw \
+    libbassboostsw \
+    libbundleaidl \
+    libdownmixaidl \
+    libdynamicsprocessingaidl \
+    libenvreverbsw \
+    libequalizersw \
+    libextensioneffect \
+    libhapticgeneratoraidl \
+    libloudnessenhanceraidl \
+    libnssw \
+    libpreprocessingaidl \
+    libpresetreverbsw \
+    libreverbaidl \
+    libspatializersw \
+    libvirtualizersw \
+    libvisualizeraidl \
+    libvolumesw
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \

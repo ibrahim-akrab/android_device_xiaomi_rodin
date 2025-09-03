@@ -124,32 +124,15 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libultrahdr.so', 'libultrahdr_rodin.so'),
     'vendor/etc/vintf/manifest/manifest_media_c2_default.xml': blob_fixup()
         .regex_replace(r'\s*<fqname>IComponentStore/dolby</fqname>\s*', ''),
-    'vendor/lib64/libmisoundfx_mtk_aidl_ext.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V3-ndk.so', 'android.media.audio.common.types-V4-ndk.so')
-        .replace_needed('android.hardware.audio.effect-V2-ndk.so', 'android.hardware.audio.effect-V3-ndk.so'),
-    'vendor/lib64/hw/audio.primary.mt6899.so': blob_fixup()
+    'vendor/lib64/hw/audio.primary.mediatek.so': blob_fixup()
         .replace_needed('libalsautils.so', 'libalsautils-v34.so'),
     (
-        "vendor/lib64/soundfx/libaecsw.so",
-        "vendor/lib64/soundfx/libagc1sw.so",
-        "vendor/lib64/soundfx/libagc2sw.so",
-        "vendor/lib64/soundfx/libbassboostsw.so",
-        "vendor/lib64/soundfx/libbundleaidl.so",
-        "vendor/lib64/soundfx/libdownmixaidl.so",
-        "vendor/lib64/soundfx/libdynamicsprocessingaidl.so",
-        "vendor/lib64/soundfx/libequalizersw.so",
-        "vendor/lib64/soundfx/libextensioneffect.so",
-        "vendor/lib64/soundfx/libloudnessenhanceraidl.so",
-        "vendor/lib64/soundfx/libnssw.so",
-        "vendor/lib64/soundfx/libpreprocessingaidl.so",
-        "vendor/lib64/soundfx/libpresetreverbsw.so",
-        "vendor/lib64/soundfx/libreverbaidl.so",
-        "vendor/lib64/soundfx/libvirtualizersw.so",
-        "vendor/lib64/soundfx/libvisualizeraidl.so",
-        "vendor/lib64/soundfx/libvolumesw.so",
+        'vendor/bin/hw/android.hardware.audio.service-aidl.mediatek',
+        'vendor/lib64/android.hardware.audio.core-impl-mediatek.so',
+        'vendor/lib64/hw/android.hardware.soundtrigger3-impl.so',
+        'vendor/lib64/libmisoundfx_mtk_aidl_ext.so'
     ): blob_fixup()
-        .replace_needed("android.media.audio.common.types-V5-ndk.so", "android.media.audio.common.types-V5-ndk_vendor.so")
-        .replace_needed('android.hardware.audio.effect-V2-ndk.so', 'android.hardware.audio.effect-V3-ndk.so'),
+        .replace_needed("libaudio_aidl_conversion_common_ndk.so", "libaudio_aidl_conversion_common_ndk_mtk.so")
 }  # fmt: skip
 
 module = ExtractUtilsModule(

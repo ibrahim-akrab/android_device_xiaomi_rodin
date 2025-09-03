@@ -20,12 +20,20 @@ vendor/lib64/vendor.mediatek.hardware.apuware.utils-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.apuware.apusys-V5-ndk.so
 
 # Audio
-vendor/lib64/hw/audio.primary.mediatek.so:vendor/lib64/hw/audio.primary.mt6899.so;FIX_SONAME
-vendor/lib64/hw/audio.r_submix.mediatek.so:vendor/lib64/hw/audio.r_submix.mt6899.so;FIX_SONAME
+vendor/bin/hw/android.hardware.audio.service-aidl.mediatek
+vendor/etc/init/android.hardware.audio.service-aidl.mediatek.rc
+vendor/etc/vintf/manifest/android.hardware.audio.effect.service-aidl.xml:vendor/etc/vintf/manifest/android.hardware.audio.effect.service-aidl-mediatek.xml
+vendor/etc/vintf/manifest/android.hardware.audio.service-aidl.xml:vendor/etc/vintf/manifest/android.hardware.audio.service-aidl-mediatek.xml
+vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so
+vendor/lib64/hw/audio.primary.mediatek.so;SYMLINK=vendor/lib64/hw/audio.primary.mt6899.so
+vendor/lib64/hw/audio.r_submix.mediatek.so;SYMLINK=vendor/lib64/hw/audio.r_submix.mt6899.so
 vendor/lib64/hw/sound_trigger.primary.default.so
+vendor/lib64/hw/vendor.mediatek.hardware.audio-impl.so
+vendor/lib64/android.hardware.audio.core-impl-mediatek.so
+vendor/lib64/android.media.audio.common.types-V5-ndk.so
 vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v34.so;FIX_SONAME
-vendor/lib64/android.media.audio.common.types-V5-ndk.so:vendor/lib64/android.media.audio.common.types-V5-ndk_vendor.so;FIX_SONAME
 vendor/lib64/lib_iir.so
+vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_mtk.so;FIX_SONAME
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
 vendor/lib64/libaudiocompensationfilterc.so
@@ -35,6 +43,7 @@ vendor/lib64/libaudiocustparam_vendor.so
 vendor/lib64/libaudiodcrflt_vendor.so
 vendor/lib64/libaudiofmtconv.so
 vendor/lib64/libaudioloudc.so
+vendor/lib64/libaudiopolicyconfigxml_mtk_vendor.so
 vendor/lib64/libaudioprimarydevicehalifclient.so
 vendor/lib64/libaudiosmartpamtk.so
 vendor/lib64/libaudiotoolkit_vendor.so
@@ -42,6 +51,7 @@ vendor/lib64/libaurisysdemo.so
 vendor/lib64/libawinicsmartpaparse.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/libblisrc32_vendor.so
+vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
 vendor/lib64/libcvsd_mtk.so
 vendor/lib64/libfsmsmartpaparse.so
 vendor/lib64/libfvaudio.so
@@ -73,31 +83,12 @@ vendor/lib64/libvow_ap_test_vaca_hh.so
 vendor/lib64/libvow_ap_test_vaca_nn.so
 vendor/lib64/libvow_comp_test.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
+vendor/lib64/vendor.mediatek.hardware.audio-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
 odm/lib64/libbarrage.so
-vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
 vendor/lib64/libaudiocloudctrl.so
 vendor/lib64/libxlog.so
 vendor/lib64/libaudiodatabase.so
-
-# Audio effects
-vendor/lib64/soundfx/libaecsw.so
-vendor/lib64/soundfx/libagc1sw.so
-vendor/lib64/soundfx/libagc2sw.so
-vendor/lib64/soundfx/libbassboostsw.so
-vendor/lib64/soundfx/libbundleaidl.so
-vendor/lib64/soundfx/libdownmixaidl.so
-vendor/lib64/soundfx/libdynamicsprocessingaidl.so
-vendor/lib64/soundfx/libequalizersw.so
-vendor/lib64/soundfx/libextensioneffect.so
-vendor/lib64/soundfx/libloudnessenhanceraidl.so
-vendor/lib64/soundfx/libnssw.so
-vendor/lib64/soundfx/libpreprocessingaidl.so
-vendor/lib64/soundfx/libpresetreverbsw.so
-vendor/lib64/soundfx/libreverbaidl.so
-vendor/lib64/soundfx/libvirtualizersw.so
-vendor/lib64/soundfx/libvisualizeraidl.so
-vendor/lib64/soundfx/libvolumesw.so
 
 # Audio (mediaeventgather)
 odm/bin/hw/vendor.xiaomi.hardware.mediaeventgatherservice-service
@@ -109,9 +100,12 @@ odm/etc/init/vendor.xiaomi.hardware.mediaeventgatherservice.rc
 vendor/lib64/libmis6.so
 vendor/lib64/libmisoundcrossfade.so
 vendor/lib64/libmisoundfpsop.so
-vendor/lib64/libmisoundfx_mtk_aidl_ext.so
+vendor/lib64/libmisoundfx_mtk_aidl_ext.so;SYMLINK=vendor/lib64/soundfx/libmisoundfx_mtk_aidl.so
 vendor/lib64/libmisoundparser.so
 vendor/lib64/libmisoundsa.so
+
+# Audio (soundtrigger)
+vendor/lib64/hw/android.hardware.soundtrigger3-impl.so;DISABLE_DEPS
 
 # Audio Configs
 vendor/etc/audio_param/FV-SAM-MTKXX.dat
@@ -257,7 +251,8 @@ vendor/etc/audiodata.db
 # Batterysecret
 vendor/bin/batterysecret
 
-# Bluetooth (Driver)
+# Bluetooth
+vendor/lib64/android.hardware.bluetooth.audio-impl-mediatek.so
 vendor/etc/init/init.bt_drv.rc
 vendor/lib64/libbt-vendor.so
 vendor/lib64/libbluetooth_mtk.so

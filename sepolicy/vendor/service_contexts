@@ -1,3 +1,7 @@
+# Audio
+vendor.mediatek.hardware.audio.IMtkAudio/default u:object_r:hal_audio_service:s0
+vendor.mediatek.hardware.bluetooth.audio.IBluetoothAudioProviderFactory/default u:object_r:hal_audio_service:s0
+
 # Display
 vendor.xiaomi.hardware.displayfeature_aidl.IDisplayFeature/default       u:object_r:vendor_hal_displayfeature_service:s0
 
