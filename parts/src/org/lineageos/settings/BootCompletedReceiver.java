@@ -36,7 +36,6 @@ import android.view.Display;
 import android.view.Display.HdrCapabilities;
 
 import org.lineageos.settings.doze.DozeUtils;
-import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
 import org.lineageos.settings.touchsampling.TouchSamplingUtils;
 import org.lineageos.settings.touchsampling.TouchSamplingService;
@@ -75,7 +74,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         // Call LineageOS functionalities
         DozeUtils.onBootCompleted(context);
-        ThermalUtils.startService(context);
         RefreshUtils.startService(context);
         TouchSamplingUtils.restoreSamplingValue(context);
         } catch (Exception e) {
