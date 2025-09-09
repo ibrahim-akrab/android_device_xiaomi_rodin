@@ -16,6 +16,9 @@ type vendor_displayfeature_sysfs, fs_type, sysfs_type;
 type vendor_persist_display_file, file_type;
 type vendor_display_data_file, file_type;
 
+# Dolby
+type vendor_dolby_data_file, file_type;
+
 # Fingerprint
 type vendor_fingerprint_sysfs, sysfs_type, fs_type;
 

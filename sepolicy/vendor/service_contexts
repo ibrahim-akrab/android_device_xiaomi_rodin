@@ -5,6 +5,9 @@ vendor.mediatek.hardware.bluetooth.audio.IBluetoothAudioProviderFactory/default 
 # Display
 vendor.xiaomi.hardware.displayfeature_aidl.IDisplayFeature/default       u:object_r:vendor_hal_displayfeature_service:s0
 
+# Dolby
+vendor.dolby.dms.IDms/default    u:object_r:hal_dms_aidl_service:s0
+
 # Fido
 vendor.xiaomi.hardware.mfidoca.IFidoService/default       u:object_r:hal_mfidoca_service:s0
 
@@ -16,6 +19,10 @@ vendor.xiaomi.hardware.fx.tunnel.IMiFxTunnel/default                    u:object
 
 # Mlipay
 vendor.xiaomi.hardware.mlipay.IMlipayService/default        u:object_r:hal_mlipay_service:s0
+
+# Media
+android.hardware.media.c2.IComponentStore/dolby                      u:object_r:hal_codec2_service:s0
+android.hardware.media.c2.IComponentStore/default9                   u:object_r:hal_codec2_service:s0
 
 # Mtdservice
 vendor.xiaomi.hardware.aidl.mtdservice.IMTService/default        u:object_r:hal_mtdservice_service:s0
