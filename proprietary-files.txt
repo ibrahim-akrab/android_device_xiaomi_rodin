@@ -1656,12 +1656,6 @@ vendor/etc/vintf/manifest/android.hardware.security.keymint-service.mitee.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.mitee.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.mitee.xml
 
-# Lights
-odm/bin/hw/android.hardware.lights-service.mediatek
-odm/etc/init/lights-mtk-default.rc
-odm/etc/vintf/manifest/lights-mtk-default.xml
-vendor/lib64/vendor.mediatek.hardware.mtklight-V1-ndk.so
-
 # MBrain
 vendor/lib64/libmbrainSDKv.so
 vendor/lib64/vendor.mediatek.hardware.mbrain-V6-ndk.so
