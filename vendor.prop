@@ -20,10 +20,12 @@ vendor.audio.usb.super_hifi=true
 vendor.audio.usb.iems.period_us=5000
 
 # Audio (Dolby)
+persist.vendor.audio.hwdap=false
 ro.vendor.audio.device.db=DB_XM
 ro.vendor.audio.dolby.dax.support=true
 ro.vendor.audio.device.dbcom=dolby_common
 ro.vendor.dolby.dax.version=DAX3_3.12.0.8_r1
+vendor.audio.dolby.control.support=true
 
 # APK Verity
 ro.apk_verity.mode=2
