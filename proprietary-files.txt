@@ -112,7 +112,6 @@ vendor/lib64/libdolbyeglcore.so
 vendor/lib64/libdolbydecoderprocessor.so
 vendor/lib64/libdolbyottcameracontrol.so
 vendor/lib64/libspatializerparamstorage.so
-vendor/lib64/libswspatializer_mtk_aidl_ext.so
 vendor/lib64/libdapparamstorage.so
 vendor/lib64/libdeccfg.so
 vendor/lib64/libdmshal.so
