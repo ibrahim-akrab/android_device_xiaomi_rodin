@@ -158,4 +158,8 @@
         <name>vendor.mediatek.hardware.mmagent</name>
         <fqname>IMMAgent/default</fqname>
     </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.videotelephony</name>
+        <fqname>IVideoTelephony/default</fqname>
+    </hal>
 </manifest>
