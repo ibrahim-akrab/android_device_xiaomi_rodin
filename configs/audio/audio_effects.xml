@@ -22,6 +22,13 @@
         <library name="loudness_enhancer" path="libldnhncr.so"/>
         <library name="dynamics_processing" path="libdynproc.so"/>
         <library name="pre_processing" path="libaudiopreprocessing.so"/>
+        <!--DOLBY DAP-->
+        <library name="dap" path="libswdapaidl.so"/>
+        <library name="dvl" path="libdlbvolaidl.so"/>
+        <!--DOLBY SPATIALIZER-->
+        <library name="spatializer" path="libswspatializeraidl.so"/>
+        <!--DOLBY GAME-->
+        <library name="gamedap" path="libswgamedapaidl.so"/>
     </libraries>
 
     <!-- list of effects to load.
@@ -62,52 +69,32 @@
         <effect name="agc" library="pre_processing" uuid="aa8130e0-66fc-11e0-bad0-0002a5d5c51b"/>
         <effect name="aec" library="pre_processing" uuid="bb392ec0-8d4d-11e0-a896-0002a5d5c51b"/>
         <effect name="ns" library="pre_processing" uuid="c06c8400-8e06-11e0-9cb6-0002a5d5c51b"/>
+        <!--DOLBY DAP-->
+        <effect name="dap" library="dap" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa"/>
+        <effect name="dlb_music_listener" library="dvl" uuid="40f66c8b-5aa5-4345-8919-53ec431aaa98"/>
+        <effect name="dlb_ring_listener" library="dvl" uuid="21d14087-558a-4f21-94a9-5002dce64bce"/>
+        <effect name="dlb_alarm_listener" library="dvl" uuid="6aff229c-30c6-4cc8-9957-dbfe5c1bd7f6"/>
+        <!--DOLBY SPATIALIZER-->
+        <effect name="spatializer" library="spatializer" uuid="ccd4cf09-a79d-46c2-9aae-06a1698d6c8f"/>
+        <!--DOLBY GAME-->
+        <effect name="gamedap" library="gamedap" uuid="3783c334-d3a0-4d13-874f-0032e5fb80e2"/>
+        <!--DOLBY END-->
     </effects>
-
+    <postprocess>
+        <stream type="music">
+            <apply effect="dlb_music_listener"/> <!--DOLBY ADD-->
+        </stream>
+        <stream type="ring">
+            <apply effect="dlb_ring_listener"/> <!--DOLBY ADD-->
+        </stream>
+        <stream type="alarm">
+            <apply effect="dlb_alarm_listener"/> <!--DOLBY ADD-->
+        </stream>
+    </postprocess>
     <preprocess>
         <stream type="voice_communication">
             <apply effect="aec"/>
             <apply effect="ns"/>
         </stream>
     </preprocess>
-
-    <!-- Audio pre processor configurations.
-         The pre processor configuration is described in a "preprocess" element and consists in a
-         list of elements each describing pre processor settings for a given use case or "stream".
-         Each stream element has a "type" attribute corresponding to the input source used.
-         Valid types are:
-              "mic", "camcorder", "voice_recognition", "voice_communication"
-         Each "stream" element contains a list of "apply" elements indicating one effect to apply.
-         The effect to apply is designated by its name in the "effects" elements.
-
-        <preprocess>
-            <stream type="voice_communication">
-                <apply effect="aec"/>
-                <apply effect="ns"/>
-            </stream>
-        </preprocess>
-    -->
-
-    <!-- Audio post processor configurations.
-         The post processor configuration is described in a "postprocess" element and consists in a
-         list of elements each describing post processor settings for a given use case or "stream".
-         Each stream element has a "type" attribute corresponding to the stream type used.
-         Valid types are:
-              "music", "ring", "alarm", "notification", "voice_call"
-         Each "stream" element contains a list of "apply" elements indicating one effect to apply.
-         The effect to apply is designated by its name in the "effects" elements.
-
-        <postprocess>
-            <stream type="music">
-                <apply effect="music_post_proc"/>
-            </stream>
-            <stream type="voice_call">
-                <apply effect="voice_post_proc"/>
-            </stream>
-            <stream type="notification">
-                <apply effect="notification_post_proc"/>
-            </stream>
-        </postprocess>
-    -->
-
 </audio_effects_conf>
