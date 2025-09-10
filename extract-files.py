@@ -131,9 +131,11 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/android.hardware.audio.core-impl-mediatek.so',
         'vendor/lib64/hw/android.hardware.soundtrigger3-impl.so',
         'vendor/lib64/libmisoundfx_mtk_aidl_ext.so',
+        "vendor/lib64/libswspatializer_mtk_aidl_ext.so",
         "vendor/lib64/soundfx/libswdapaidl.so",
         "vendor/lib64/soundfx/libswgamedapaidl.so",
         "vendor/lib64/soundfx/libswspatializeraidl.so",
+        "vendor/lib64/soundfx/libspatializermtkaidl.so",
     ): blob_fixup()
         .replace_needed("libaudio_aidl_conversion_common_ndk.so", "libaudio_aidl_conversion_common_ndk_mtk.so")
 }  # fmt: skip

@@ -133,6 +133,8 @@ vendor/lib64/libmisoundfpsop.so
 vendor/lib64/libmisoundfx_mtk_aidl_ext.so;SYMLINK=vendor/lib64/soundfx/libmisoundfx_mtk_aidl.so
 vendor/lib64/libmisoundparser.so
 vendor/lib64/libmisoundsa.so
+vendor/lib64/libswspatializer_mtk_aidl_ext.so
+vendor/lib64/soundfx/libspatializermtkaidl.so
 
 # Audio (soundtrigger)
 vendor/lib64/hw/android.hardware.soundtrigger3-impl.so;DISABLE_DEPS
